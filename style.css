@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TWA Ranglari va Asosiy tana */
+body {
+    background-color: var(--tg-theme-secondary-bg-color, #f4f7f6);
+    color: var(--tg-theme-text-color, #333);
+    padding: 10px; /* Mobil uchun kichikroq joy */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: var(--tg-theme-bg-color, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 15px;
+    min-height: 95vh;
+}
+
+/* Oynalarni almashtirish */
+.view { display: none; }
+.view.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Yuqori qism */
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--tg-theme-hint-color, #eee);
+    flex-wrap: wrap; /* Mobil uchun qatordan tushishiga ruxsat */
+    gap: 10px;
+}
+
+/* Tugmalar */
+.btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    color: var(--tg-theme-button-text-color, #fff);
+}
+.btn-primary { background: var(--tg-theme-button-color, #007bff); }
+.btn-success { background: #28a745; }
+.btn-secondary { background: #6c757d; }
+.btn-danger { background: #dc3545; }
+.btn-warning { background: #ffc107; color: #212529; }
+
+/* Guruhlar ro'yxati */
+.groups-list { display: flex; flex-direction: column; gap: 10px; }
+.group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--tg-theme-hint-color, #e0e0e0);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.group-name { font-size: 1.1rem; font-weight: bold; }
+.group-actions { display: flex; gap: 5px; }
+
+/* Jadval */
+.group-title { font-size: 1.3rem; text-align: center; flex-grow: 1; }
+.table-container { overflow-x: auto; width: 100%; }
+.styled-table { width: 100%; border-collapse: collapse; font-size: 0.9em; min-width: 300px; }
+.styled-table thead tr { background-color: var(--tg-theme-button-color, #0056b3); color: #fff; text-align: left; }
+.styled-table th, .styled-table td { padding: 10px; border-bottom: 1px solid var(--tg-theme-hint-color, #ddd); }
+
+/* Custom Modal */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; z-index: 1000; transition: 0.2s;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-content {
+    background: var(--tg-theme-bg-color, #fff);
+    color: var(--tg-theme-text-color, #333);
+    padding: 20px; border-radius: 12px; width: 90%; max-width: 400px;
+}
+.form-input {
+    width: 100%; padding: 10px; margin-bottom: 10px;
+    border: 1px solid var(--tg-theme-hint-color, #ddd);
+    border-radius: 5px;
+    background: var(--tg-theme-bg-color, #fff);
+    color: var(--tg-theme-text-color, #333);
+}
+.modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
+
+/* MOBIL EKRANLAR UCHUN MOSLASHTIRISH */
+@media (max-width: 480px) {
+    .header-actions { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .group-title { order: -1; margin-bottom: 10px; } /* Sarlavhani eng tepaga chiqarish */
+    .styled-table th, .styled-table td { padding: 8px 5px; font-size: 0.85rem; }
+    .group-actions { flex-direction: column; } /* Tugmalarni ustma-ust qilish */
+}

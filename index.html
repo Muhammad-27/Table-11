@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>O'quv Markazi Boshqaruvi</title>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <div id="groups-view" class="view active">
+        <div class="header-actions">
+            <div></div> <button class="btn btn-success" id="add-group-btn">
+                <i class="fas fa-plus"></i> Yangi guruh
+            </button>
+        </div>
+
+        <div class="groups-list" id="groups-container">
+            </div>
+    </div>
+
+    <div id="students-view" class="view hidden">
+        <div class="header-actions">
+            <button class="btn btn-secondary" id="back-btn">
+                <i class="fas fa-arrow-left"></i> Orqaga
+            </button>
+            
+            <h2 id="current-group-name" class="group-title">Guruh nomi</h2>
+            
+            <button class="btn btn-success" id="add-student-btn">
+                <i class="fas fa-plus"></i> O'quvchi
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>T/r</th>
+                        <th>Ism</th>
+                        <th>Familiya</th>
+                        <th>Harakatlar</th>
+                    </tr>
+                </thead>
+                <tbody id="students-tbody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div> <div class="modal-overlay" id="custom-modal">
+    <div class="modal-content">
+        <h3 class="modal-title" id="modal-title">Sarlavha</h3>
+        
+        <div class="modal-body" id="modal-body">
+            </div>
+        
+        <p class="error-text" id="modal-error"></p>
+        
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="modal-cancel-btn">Bekor qilish</button>
+            <button class="btn btn-primary" id="modal-save-btn">Saqlash</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
