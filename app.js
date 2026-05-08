@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();      // TWA tayyor ekanligini bildirish
 tg.expand();     // Ilovani to'liq ekranda ochish
 
-const API_URL = 'http://localhost:3000/api'; // (Yoki hostinga qo'ygandagi manzil)
+const API_URL = 'https://table-11-api.onrender.com/api'; // (Yoki hostinga qo'ygandagi manzil)
 
 // DOM Elementlari
 const groupsContainer = document.getElementById('groups-container');
